@@ -30,26 +30,6 @@ IR-TP2-Term-Weighting/
 
 ---
 
-## Installation & Execution Instructions
-
-1. **Clone the repository:**
-   ```bash
-   git clone <your-repository-url>
-   cd IR-TP2-Term-Weighting
-   ```
-
-2. **Create a virtual environment (optional) and install dependencies:**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
-
-3. **Run the notebook:**
-   Open `tp2_term_weighting.ipynb` in Jupyter Notebook, JupyterLab, or VS Code and run all cells sequentially. Running the notebook reproduces all tables in the console and exports the CSV files into the `results/` directory.
-
----
-
 ## Functions Implemented from Scratch
 
 * **`compute_tf(document)`**  
@@ -74,15 +54,6 @@ IR-TP2-Term-Weighting/
   Multiplies each term frequency entry by its corresponding IDF score ($w(t, d) = tf(t, d) \times idf(t)$) to produce both the raw TF-IDF and normalized TF-IDF matrices.
 * **`highest_weighted_terms(tfidf_df)`**  
   Extracts the highest-weighted term(s) and their TF-IDF scores for every document.
-
----
-
-## Library Functions Used for Verification
-
-* **`sklearn.feature_extraction.text.TfidfVectorizer`**  
-  Configured with `sublinear_tf=False`, `smooth_idf=False`, `norm=None`, `lowercase=False`, `tokenizer=str.split`, and the fixed `vocabulary` list to verify raw term counts and inspect IDF behavior.
-* **`pandas` & `math` & `collections.Counter`**  
-  Used strictly for tabular presentation/CSV export, base-10 logarithms (`math.log10`), and token counting.
 
 ---
 
